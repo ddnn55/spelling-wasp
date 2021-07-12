@@ -35,7 +35,7 @@ for(let requiredChar of alphabet) {
     // iterate the chooses
     // easier to think about it this way:
     // brute force all 26^6, then uniq their sorted representations
-    const chooses = choose(remove(alphabet, requiredChar), 4);
+    const chooses = choose(remove(alphabet, requiredChar), 6);
     for(let choose of chooses) {
         console.log(`${requiredChar} ${choose}`);
     }
