@@ -9,7 +9,6 @@ for(let char of alphabet) {
     wordsByContainedLetter[char] = [];
 }
 
-
 const words = fs.readFileSync(path.join(__dirname, 'words.txt'), {encoding: 'utf-8'}).split('\n').map(word => word.toLowerCase());
 
 for(let word of words) {
@@ -20,4 +19,4 @@ for(let word of words) {
     }
 }
 
-console.log(wordsByContainedLetter)
+console.log(wordsByContainedLetter);

@@ -6,6 +6,8 @@
 // total puzzles
 // 26 * (25 choose 6) = 26 * 177100 = 4,604,600
 
+console.error('Warning: this took on the order of 1 hour on a 2020 MacBook Pro');
+
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 
 const remove = (str, char) => {
