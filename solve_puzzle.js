@@ -1,6 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
+const requiredChar = process.argv[2];
+const otherChars = process.argv[3];
+
+console.error({requiredChar, otherChars});
+
 const alphabet = 'abcdefghijklmnopqrstuvwxyz';
 const letters = new Set();
 const wordsByContainedLetter = {};
