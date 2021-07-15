@@ -27,8 +27,6 @@ for(let word of words) {
     }
 }
 
-console.log(wordsByContainedLetter);
-
 const puzzleAlphabet = new Set();
 puzzleAlphabet.add(requiredChar);
 for(let char of otherChars) {
@@ -48,4 +46,4 @@ for(let word of wordsByContainedLetter[requiredChar]) {
         validWords.add(word);
     }
 }
-console.log(validWords);
+console.log(Array.from(validWords).join('\n'));
