@@ -17,6 +17,9 @@ for(let char of alphabet) {
 const words = fs.readFileSync(path.join(__dirname, 'words.txt'), {encoding: 'utf-8'}).split('\n').map(word => word.toLowerCase());
 
 for(let word of words) {
+    if(word.length < 4) {
+        continue;
+    }
     for(let char of word) {
         if(letters.has(char)) {
             wordsByContainedLetter[char].push(word);
@@ -25,3 +28,24 @@ for(let word of words) {
 }
 
 console.log(wordsByContainedLetter);
+
+const puzzleAlphabet = new Set();
+puzzleAlphabet.add(requiredChar);
+for(let char of otherChars) {
+    puzzleAlphabet.add(char);
+}
+
+const validWords = new Set();
+
+for(let word of wordsByContainedLetter[requiredChar]) {
+    let valid = true;
+    for(let char of word) {
+        if(!puzzleAlphabet.has(char)) {
+            valid = false;
+        }
+    }
+    if(valid) {
+        validWords.add(word);
+    }
+}
+console.log(validWords);
