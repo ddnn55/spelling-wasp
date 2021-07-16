@@ -44,7 +44,7 @@ function solve(requiredChar, otherChars) {
             validWords.add(word);
         }
     }
-    console.log(Array.from(validWords).join('\n'));
+    return Array.from(validWords);
 }
 
 if(require.main === module) {
@@ -53,7 +53,8 @@ if(require.main === module) {
 
     console.error({requiredChar, otherChars});
 
-    solve(requiredChar, otherChars);
+    const words = solve(requiredChar, otherChars);
+    console.log(words.join('\n'));
 }
 else {
     module.exports = solve;
